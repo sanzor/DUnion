@@ -13,7 +13,7 @@ namespace TestSubmit
                 public static void Process(M12 message){
                     Console.WriteLine(message.value);
                 }
-                public new const string _type=M1._type+"."+nameof(M1);
+                public new const string _type=M1._type+"."+nameof(M12);
                 public int value{get;set;}
 
                 protected override string MessageKind => _type;

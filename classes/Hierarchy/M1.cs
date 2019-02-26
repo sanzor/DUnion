@@ -21,7 +21,7 @@ namespace TestSubmit
             public M11 AsM11=>this as M11;
             [JsonIgnore]
             public M12 AsM12=>this as M12;
-            public new const string _type=M._type+"."+nameof(M);
+            public new const string _type=M._type+"."+nameof(M1);
             
         }
     }
