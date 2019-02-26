@@ -3,8 +3,6 @@ using JsonSubTypes;
 using Newtonsoft.Json;
 namespace TestSubmit
 {
-
-    
     partial class M
     {
         public abstract partial class M1:M
