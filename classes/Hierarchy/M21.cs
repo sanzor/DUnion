@@ -10,6 +10,9 @@ namespace TestSubmit
         {
             public class M21 : M2
             {
+                public static void Process(M21 message){
+                    
+                }
                 public int [] value{get;set;}
 
                 protected override string MessageKind =>_type;
