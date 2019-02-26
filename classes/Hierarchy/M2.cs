@@ -13,8 +13,7 @@ namespace TestSubmit
             {
                 switch (message.MessageKind)
                 {
-                    case M11._type: break;
-                    case M12._type: break;
+                   
                 }
             }
             [JsonIgnore]
