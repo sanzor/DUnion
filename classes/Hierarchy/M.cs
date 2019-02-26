@@ -19,16 +19,16 @@ namespace TestSubmit
             }
         }
         [JsonIgnore]
-        public bool IsM1=>this.MessageKind==M1._type;
+        public bool IsM1=>this.Kind==M1._type;
         [JsonIgnore]
-        public bool IsM2=>this.MessageKind==M2._type;
+        public bool IsM2=>this.Kind==M2._type;
         [JsonIgnore]
         public M1 AsM1=>this as M1;
         [JsonIgnore]
         public M2 AsM2=>this as M2;
         private const string propType="$Kind";
         public const string _type=nameof(M);
-      
+        public string Kind => this.MessageKind;
         [JsonProperty(propType)]
         protected abstract string MessageKind{get;}
         public DateTime timestamp { get;}

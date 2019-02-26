@@ -14,8 +14,11 @@ namespace TestSubmit
                     Console.WriteLine(message.val);
                 }
                 public string val{get;set;}
+
+                protected override string M2Kind => _type;
+
                 public new  const string _type=M2._type+"."+nameof(M22);
-                protected override string MessageKind => _type;
+               
             }
         }
     }

@@ -15,7 +15,8 @@ namespace TestSubmit
                 }
                 public int [] value{get;set;}
 
-                protected override string MessageKind =>_type;
+                protected override string M2Kind => _type;
+
                 public new const string _type=M2._type+"."+nameof(M21);
             }
         }
