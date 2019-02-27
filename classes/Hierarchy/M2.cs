@@ -5,8 +5,8 @@ namespace TestSubmit {
 
     partial class M
     {
-        [JsonSubTypes.JsonSubtypes.KnownSubType(typeof(M.M2.M21), 121)]
-        [JsonSubTypes.JsonSubtypes.KnownSubType(typeof(M.M2.M22), 122)]
+        [JsonSubTypes.JsonSubtypes.KnownSubType(typeof(M.M2.M21), M.Leaf.M21)]
+        [JsonSubTypes.JsonSubtypes.KnownSubType(typeof(M.M2.M22), M.Leaf.M22)]
         public abstract partial class M2 : M
         {
             public static void Process(M2 message)
