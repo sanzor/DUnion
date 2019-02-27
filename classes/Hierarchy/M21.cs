@@ -1,8 +1,7 @@
 using System;
 using JsonSubTypes;
 using Newtonsoft.Json;
-namespace TestSubmit
-{
+namespace TestSubmit {
 
     partial class M
     {
@@ -15,11 +14,11 @@ namespace TestSubmit
                 }
                 public int [] value{get;set;}
 
-                protected override string M2Kind => _type;
+                protected override Discriminator M2Kind => M2.Discriminator.M21;
 
-                public override string LeafKind => _type;
+                public override Leaf LeafKind => Leaf.M21;
 
-                public new const string _type=M2._type+"."+nameof(M21);
+                
             }
         }
     }
