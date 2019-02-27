@@ -12,12 +12,15 @@ namespace TestSubmit
         {
             public static void Process(M2 message)
             {
-                switch (message.MessageKind)
+                switch (message.M2Kind)
                 {
                    case M2.M21._type : M2.M21.Process(message.AsM21);break;
                    case M2.M22._type : M2.M22.Process(message.AsM22);break;
                 }
             }
+
+            protected abstract string M2Kind { get; }
+            public new string Kind => M2Kind;
             [JsonIgnore]
             public bool IsM21 => this.Kind == M21._type;
             [JsonIgnore]
@@ -27,10 +30,8 @@ namespace TestSubmit
             [JsonIgnore]
             public M22 AsM22 => this as M22;
             public new const string _type = M._type + "." + nameof(M2);
-            protected override string MessageKind => _type;
+            protected override string MKind => _type;
 
-            protected abstract string M2Kind { get; }
-            public new string Kind => this.M2Kind;
         }
     }
 }

@@ -10,20 +10,20 @@ namespace TestSubmit
         public abstract partial class M1:M
         {
             public static   void  Process(M1 message){
-                switch(message.MessageKind){
+                switch(message.M1Kind){
                     case M11._type : M1.M11.Process(message.AsM11);break;
-                    case M12._type:M1.M11.Process(message.AsM12);break;
+                    case M12._type:M1.M12.Process(message.AsM12);break;
                 }
             }
-            protected override string MessageKind => _type;
+            protected override string MKind => _type;
 
             public new string Kind => this.M1Kind;
            
             protected abstract string M1Kind { get; }
             [JsonIgnore]
-            public bool IsM11=>this.Kind==M11._type;
+            public bool IsM11=>this.M1Kind==M11._type;
             [JsonIgnore]
-            public bool IsM12=>this.Kind==M12._type;
+            public bool IsM12=>this.M1Kind==M12._type;
             [JsonIgnore]
             public M11 AsM11=>this as M11;
             [JsonIgnore]

@@ -17,6 +17,8 @@ namespace TestSubmit
 
                 protected override string M2Kind => _type;
 
+                public override string LeafKind => _type;
+
                 public new  const string _type=M2._type+"."+nameof(M22);
                
             }

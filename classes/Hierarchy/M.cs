@@ -13,24 +13,33 @@ namespace TestSubmit
     {
         public static void Process(M message){
             
-            switch(message.MessageKind){
+            switch(message.MKind){
                 case M.M1._type : M.M1.Process(message.AsM1);break;
                 case M.M2._type: M.M2.Process(message.AsM2);break;
             }
         }
         [JsonIgnore]
-        public bool IsM1=>this.Kind==M1._type;
+        public bool IsM1=>this.MKind==M1._type;
         [JsonIgnore]
-        public bool IsM2=>this.Kind==M2._type;
+        public bool IsM2=>this.MKind==M2._type;
         [JsonIgnore]
         public M1 AsM1=>this as M1;
         [JsonIgnore]
         public M2 AsM2=>this as M2;
-        private const string propType="$Kind";
+        private const string propType="$LeafKind";
         public const string _type=nameof(M);
-        public string Kind => this.MessageKind;
+
+        
+        ///Final type
+        
         [JsonProperty(propType)]
-        protected abstract string MessageKind{get;}
+        public abstract string LeafKind{get;}
+
+
+
+        protected abstract string MKind{get;}
+        public string Kind=>this.MKind;
+
         public DateTime timestamp { get;}
     }
 }

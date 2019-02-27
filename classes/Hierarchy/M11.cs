@@ -19,6 +19,8 @@ namespace TestSubmit
 
 
                 protected override string M1Kind => _type;
+
+                public override string LeafKind => _type;
             }
         }
     }
